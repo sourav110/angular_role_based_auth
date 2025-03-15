@@ -6,24 +6,12 @@
       </button>
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="customer">Customer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="loan-applications">loan-applications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="approvals">approvals</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="change-password">change-password</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="my-applications">my-applications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="approved-applications">approved-applications</a>
-          </li>
+          @for (item of userwiseMenuList; track $index) {
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="item.path">{{item.title}}</a>
+            </li>   
+          }
+                 
         </ul>
         <form class="d-flex">
           <button class="btn btn-primary" type="button" (click)="onLogout()">Logout</button>

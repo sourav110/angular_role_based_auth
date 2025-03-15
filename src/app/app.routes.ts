@@ -7,6 +7,7 @@ import { ApprovalsComponent } from './components/approvals/approvals.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { MyApplicationsComponent } from './components/my-applications/my-applications.component';
 import { ApprovedApplicationsComponent } from './components/approved-applications/approved-applications.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
+            {
+                path: 'dashboard',
+                component: DashboardComponent
+            },
             {
                 path: 'customer',
                 component: CustomerComponent
